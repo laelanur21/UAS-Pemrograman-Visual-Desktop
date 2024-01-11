@@ -1,0 +1,131 @@
+object TfrmDataKategoriBarang: TTfrmDataKategoriBarang
+  Left = 658
+  Height = 323
+  Top = 285
+  Width = 437
+  Caption = 'Data Kategori'
+  ClientHeight = 323
+  ClientWidth = 437
+  Color = clMoneyGreen
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object DBGridKategori: TDBGrid
+    Left = 48
+    Height = 181
+    Top = 96
+    Width = 341
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSourceKatagori
+    TabOrder = 0
+    OnCellClick = DBGridKategoriCellClick
+  end
+  object Label1: TLabel
+    Left = 117
+    Height = 30
+    Top = 16
+    Width = 210
+    Caption = 'Data Kategori Barang'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BtnDelete: TButton
+    Left = 293
+    Height = 24
+    Top = 288
+    Width = 96
+    Caption = 'Hapus'
+    Font.Style = [fsBold]
+    OnClick = BtnDeleteClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BtnCari: TButton
+    Left = 267
+    Height = 22
+    Top = 62
+    Width = 53
+    Caption = 'Search'
+    Font.Style = [fsBold]
+    OnClick = BtnCariClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ECari: TEdit
+    Left = 48
+    Height = 23
+    Top = 62
+    Width = 203
+    TabOrder = 3
+    TextHint = 'Search'
+  end
+  object BtnReset: TButton
+    Left = 336
+    Height = 22
+    Top = 62
+    Width = 53
+    Caption = 'Reset'
+    Font.Style = [fsBold]
+    OnClick = BtnResetClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object BtnAddKategori: TButton
+    Left = 53
+    Height = 24
+    Top = 288
+    Width = 96
+    Caption = 'Tambah'
+    Font.Style = [fsBold]
+    OnClick = BtnAddKategoriClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object BtnUpdate: TButton
+    Left = 171
+    Height = 25
+    Top = 288
+    Width = 96
+    Caption = 'Update'
+    Font.Style = [fsBold]
+    OnClick = BtnUpdateClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object SQLQueryKategori: TSQLQuery
+    FieldDefs = <>
+    Database = SQLConnector1
+    Transaction = SQLTransaction1
+    Params = <>
+    Macros = <>
+    Left = 128
+    Top = 123
+  end
+  object DataSourceKatagori: TDataSource
+    DataSet = SQLQueryKategori
+    Left = 267
+    Top = 123
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = SQLConnector1
+    Left = 128
+    Top = 187
+  end
+  object SQLConnector1: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'transaksi_jualan'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    ConnectorType = 'ODBC'
+    Left = 267
+    Top = 187
+  end
+end
